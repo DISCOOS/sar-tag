@@ -1,0 +1,21 @@
+{
+    "type": "project",
+    "name": "discoos/sartag",
+    "description": "System for tagging search and rescue resources",
+    "homepage": "http://www.discoos.org/sartag",
+    
+    "autoload": {
+        "psr-0": {"": "classes/"}
+    },
+
+    "require": {
+        "silex/silex": "1.1.1"
+    },
+            
+    "scripts": {
+      "post-update-cmd": "SARTag\\Build::configure",
+      "post-install-cmd": "SARTag\\Build::configure"
+    }
+            
+
+}

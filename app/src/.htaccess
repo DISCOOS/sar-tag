@@ -1,0 +1,14 @@
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # You may need RewriteBase on some servers (debian). NOTE: / is document root.
+    RewriteBase /sar-tag/
+
+    # Rewrite anything that would give a 404 to api.php
+    RewriteRule ^$ api.php [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ api.php [QSA,L]
+
+</IfModule>
